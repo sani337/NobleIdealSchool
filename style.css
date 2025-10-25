@@ -1,0 +1,688 @@
+/* =======================
+   Base Reset & Global
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* =======================
+   Animations
+======================= */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+@keyframes slideDown {
+  from {opacity:0; transform: translateY(-30px);}
+  to {opacity:1; transform: translateY(0);}
+}
+@keyframes zoomIn {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
+}
+.fade-in { animation: fadeIn 1s ease forwards; }
+.slide-down { animation: slideDown 1s ease forwards; }
+.zoom { animation: zoomIn 1s ease forwards; }
+
+/* =======================
+   Header Section
+======================= */
+.header-sec {
+  width: 100%;
+  background: linear-gradient(178deg, rgba(8, 0, 0, 1) 14%, rgba(3, 163, 97, 1) 93%);
+  color: #fff;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  transition: background 0.5s ease;
+}
+
+.l-part { 
+    /* flex:1 1 120px;  */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.l-part .sc-logo { 
+    width:120px; 
+    height:120px; 
+    border-radius:30%;
+    object-fit:cover;
+    transition: transform 0.5s ease; 
+}
+
+
+.r-part { 
+    /* flex:3 1 300px;  */
+    display:flex; 
+    flex-direction:column; 
+    justify-content: center;
+    width: 70%
+}
+
+.sc-name {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight:700;
+    margin-bottom:8px;
+    letter-spacing:1px;
+    transition: color 0.3s ease; 
+}
+
+.sc-name:hover {
+     color:#ffd700; 
+}
+
+.sc-add {
+     font-size: clamp(0.9rem, 2vw, 1rem); 
+     font-weight:500; 
+     transition: color 0.3s ease; 
+}
+
+/* =======================
+   Navigation Bar
+======================= */
+.nav-sec {
+  width: 100%;
+  background-color: #141414;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.nav-sec.sticky {
+   box-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+
+.nav-sec ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.nav-sec ul li { 
+  margin:0.3rem 0.8rem;
+}
+
+.nav-sec ul li a {
+  color:#fff;
+  text-decoration:none; 
+  padding:8px 16px; 
+  border-radius:6px; 
+  transition: all 0.3s ease;
+}
+
+.nav-sec ul li a:hover { 
+  background-color:#03d67a; 
+  color:#000; transform:scale(1.05); 
+}
+
+/* Hamburger Menu */
+.menu-toggle { 
+  display:none; 
+  font-size:1.8rem; 
+  color:#fff; 
+  cursor:pointer; 
+  padding:10px 20px; 
+  user-select:none;
+}
+
+/* =======================
+   Content Section
+======================= */
+.content { 
+  width:100%; 
+  padding:10px; 
+  display:flex; 
+  justify-content:center; 
+}
+
+.mar-div {
+  width:100%; 
+  max-width:900px; 
+  border:2px solid #03a361; 
+  background-color: #fff;
+  display:flex; 
+  flex-wrap:wrap; 
+  align-items:center;
+  justify-content:center; 
+  transition: all 0.5s ease;
+  margin: 10px auto;
+}
+
+.mar-head {
+     flex:1 1 150px;
+     background-color:#03a361; 
+     color:#fff; text-align:center; 
+     transition: background 0.3s ease;
+ }
+
+.mar-head h2 { 
+    padding:10px;
+     font-size:clamp(1rem,2vw,1.2rem); 
+     font-weight:600;
+ }
+
+.mar-con { 
+    flex:3 1 300px;
+    padding:5px 10px; 
+}
+
+.mar-con marquee { 
+    font-size:1rem; 
+    font-weight:500; 
+    font-family:"Ubuntu", sans-serif; 
+}
+
+/* =======================
+   Main Banner Section
+======================= */
+
+.main-content {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px auto;
+  gap: 20px;
+  min-width: 0;
+}
+
+.m-left {
+  position: relative;
+  /* flex: 3 1 600px; take most of the available space */
+  flex: 1 1 0;    /* changed: let left grow to fill available space */
+  margin: 0;
+  width: auto; /* let flex control sizing */
+  height: auto;
+  min-width: 0; /* prevent overflow in flex */
+}
+
+
+.banner-sec {
+  width: 100%;
+  max-width: none;
+  flex: 1 1 0; /* allow to grow */
+  height: auto;
+  border: 2px solid #03a361;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease;
+  padding: 8px;
+  background-color: #fff;
+  /* margin-bottom: 15px; */
+}
+
+.banner-sec hr {
+  border: none;
+  height: 5px;
+  background-color: #03a361;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.banner-sec .ban-img {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 13px;
+}
+
+.banner-sec .ban-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+}
+
+.banner-sec .ban-img img:hover {
+  transform: scale(1.05);
+}
+
+.m-right {
+  position: relative;
+  display: flex;
+  flex: 0 0 450px; /* smaller than .m-left */
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: 0;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  
+}
+
+.m-right .ch-sec, .pr-sec {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ .scale-up:hover {
+  transform: scale(1.03);
+}
+
+.scale-up:hover .sec-head {
+  background-color: #028f4a;
+}
+
+.sec-head {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #03a361;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.ch-con, .pr-con {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  text-align: left;          /* changed from center so text aligns next to the image */
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  background-color: #dadada;
+}
+
+
+.ch-img, .pr-img {
+  flex: 0 0 120px;           /* fixed, smaller column for the image */
+  width: 120px;
+  height: auto;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.tinfo {
+  flex: 1 1 auto;            /* info takes remaining space */
+  min-width: 0;              /* allow truncation/overflow handling inside flex */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.tinfo h3 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tinfo p {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.m-right .ch-sec .ch-img img, .pr-sec .pr-img img {
+  width: 100%;               /* fill the image container */
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+
+/* =======================
+   Welcome Section
+======================= */
+
+.w-content {
+  width: 95%;
+  padding: 0;
+  margin: 20px auto;
+  display: flex;
+  gap: 20px;
+  transition: all 0.5s ease;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+.wtext {
+  text-align: center;
+  background-color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  position: relative;
+  flex: 1 1 0;
+  margin: 0;
+  display: block;
+  width: auto;
+  box-sizing: border-box;
+  height: auto;
+  min-width: 0;
+  padding: 25px;
+  transition: all 0.35s ease;
+  border-radius: 3px;
+}
+
+.wtext h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #141414;
+}
+
+.wtext hr {
+  border: none;
+  width: 10%;
+  height: 2px;
+  background-color: #03a361;
+  margin-bottom: 15px;
+}
+
+.wtext p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 0;
+  
+}
+
+.tbold {
+  font-weight: 650;
+}
+
+.notice-sec {
+  margin: 0;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  flex: 0 0 340px;
+  max-width: 340px;
+  width: auto;
+  height: auto;
+  max-width: 35%;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-self: flex-start;
+}
+
+.notice-sec .sec-head {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #03a361;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  transition: background 0.3s ease;
+  margin-bottom: 8px;
+}
+
+.notice-sec, .notice-sec .sec-head, .notice-con {
+  width: 100%;
+}
+
+.notice-sec:hover .notice-sec .sec-head {
+  background-color: #046e3b;
+}
+
+.notice-sec .sec-head h2 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+}
+
+.notice-con {
+  font-size: 1rem;
+  color: #333;
+}
+
+.notice-con ul {
+  list-style: none;
+  padding-left: 14px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.notice-con ul li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+}
+.notice-con ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #03a361;
+}
+.notice-con ul li a {
+  text-decoration: none;
+  color: #141414;
+  transition: color 0.5s ease;
+}
+.notice-con ul li a:hover {
+  color: #008b51;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =======================
+   Responsive Design
+======================= */
+@media(max-width:992px){
+   .header-sec { 
+    flex-direction:column;
+    text-align:center; } 
+  .r-part { 
+    align-items:center; 
+  } 
+}
+
+@media(max-width:768px){
+   .nav-sec {
+    display: flex;
+    justify-content: space-between; /* keep toggle visible at right */
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .menu-toggle { 
+    display:block; 
+    cursor: pointer;
+    margin-right: auto;
+    z-index: 1001;
+  }
+
+  /* Hide nav items by default on mobile; show only when .show is added */
+  .nav-sec ul {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    display: none;             /* hide completely until toggled */
+    transition: max-height 0.35s ease;
+  }
+  .nav-sec ul.show {
+    display: flex;             /* reveal when toggled */
+    max-height: 500px;
+  }
+
+  .nav-sec ul li { margin:8px 0; }
+  .nav-sec ul li a { width:100%; text-align:center; padding:10px; }
+  .mar-div { 
+  width: 100%; height: 100px; font-size: 14px; padding: 0;}
+  .mar-head,.mar-con, .mar-head { width:100%; height: 60px; text-align:center; }
+}
+
+
+
+
+
+
+@media(max-width: 768px) {
+  .content {
+    padding: 5px;
+  }
+
+  .mar-div {
+    margin: 5px auto;
+  }
+
+  .main-content {
+    width: 93%;
+    margin: 10px auto;
+
+    /* gap: 15px; */
+  }
+
+  .m-left, .m-right {
+    margin: 0;
+  }
+/* 
+  .banner-sec {
+    margin-bottom: 10px;
+  } */
+   .fade-in {
+    flex-direction: column;
+   }
+   .tinfo {
+    margin-top: 14px;
+   }
+
+  .m-right .ch-sec, .pr-sec {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
+
+/* ================ Main cont ================ */
+@media(max-width:768px){
+  /* ...existing mobile rules... */
+
+  /* ensure content stacks on small screens */
+  .main-content { 
+    flex-direction: column;
+    margin: 20px;
+  }
+  .m-left, .m-right {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .m-left { order: 1; }
+  .m-right { order: 2; }
+}
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+  .w-content {
+    gap: 16px;
+    padding: 0 10px;
+  }
+  .wtext {
+    padding: 20px;
+    flex-basis: 58%;
+  }
+  .notice-sec {
+    flex-basis: 36%;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .w-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: 12px auto;
+    padding: 0 12px;
+  }
+  .wtext {
+    order: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 18px;
+    width: 100%;
+  }
+  .notice-sec {
+    order: 2;
+    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: none;
+    align-self: stretch;
+    padding: 12px;
+  }
+  .notice-sec .sec-head { font-size: 1rem; padding: 10px; }
+}
+
+@media (max-width: 420px) {
+  .w-content {
+    padding: 0 8px;
+    flex-direction: column;
+  }
+  .wtext {
+    padding: 14px;
+  }
+  .notice-sec {
+    padding: 10px;
+  }
+  .wtext p { font-size: 0.92rem; }
+}
