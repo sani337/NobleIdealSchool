@@ -138,3 +138,62 @@ faders.forEach(fader=>{ appearOnScroll.observe(fader); });
     modalImg.src = images[currentIndex].src;
   };
 
+
+
+
+
+
+
+
+
+
+
+
+  // show current year
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
+// collapsible sections (mobile)
+const buttons = document.querySelectorAll(".collapse-btn");
+buttons.forEach(btn => {
+  const target = document.getElementById(btn.getAttribute("aria-controls"));
+  btn.addEventListener("click", () => {
+    const open = target.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open);
+    btn.textContent = open ? "Hide" : "Show";
+  });
+});
+
+// newsletter validation
+const emailInput = document.getElementById("email");
+const subscribeBtn = document.getElementById("subscribe");
+const msg = document.getElementById("newsletter-message");
+
+function validEmail(email){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+subscribeBtn.addEventListener("click", () => {
+  const val = emailInput.value.trim();
+  msg.textContent = "";
+  if(!val){
+    msg.textContent = "Please enter your email.";
+    msg.style.color = "#ffbaba";
+    return;
+  }
+  if(!validEmail(val)){
+    msg.textContent = "Invalid email address.";
+    msg.style.color = "#ffbaba";
+    return;
+  }
+
+  subscribeBtn.disabled = true;
+  subscribeBtn.textContent = "Subscribing…";
+
+  setTimeout(()=>{
+    subscribeBtn.disabled = false;
+    subscribeBtn.textContent = "Subscribe";
+    msg.textContent = "Thanks! You’re subscribed.";
+    msg.style.color = "#b9f6d8";
+    emailInput.value = "";
+  },800);
+});
