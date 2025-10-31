@@ -34,7 +34,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Academics</a></li>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Gallery</a></li>
+            <li><a href="#gallary">Gallery</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
@@ -46,7 +46,9 @@
                 <h2>Latest Notices:</h2>
             </div>
             <!-- <div class="mar-con">
-                <marquee behavior="scroll" direction="left">আমাদের ওয়েবসাইটে আপনাদের স্বাগতম</marquee>
+                 <div class="marquee-wrap">
+                    <div class="marquee">Long announcement text that scrolls smoothly across the screen</div>
+                </div> 
             </div> -->
         </div>
     </main>
@@ -143,8 +145,65 @@
         </div>
     </div>
 
+
+    <!-- Carousal Sec -->
+<div class="carousel-container" id="gallary">
+    <div class="car-head">
+        <h2>Gallery</h2>
+    </div>
+    <div class="carousel">
+        <!-- First set of images -->
+        <div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1015/1600/900" alt="Gallery Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1016/1600/900" alt="Gallery Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1018/1600/900" alt="Gallery Image 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1020/1600/900" alt="Gallery Image 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1024/1600/900" alt="Gallery Image 5">
+            </div>
+        <!-- Duplicate images for continuous scroll -->
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1015/1600/900" alt="Gallery Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1016/1600/900" alt="Gallery Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1018/1600/900" alt="Gallery Image 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1020/1600/900" alt="Gallery Image 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/1024/1600/900" alt="Gallery Image 5">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fullscreen Modal -->
+<div class="modal">
+  <span class="close">&times;</span>
+  <span class="arrow left">&#10094;</span>
+  <img src="" alt="modal image" class="modal-img">
+  <span class="arrow right">&#10095;</span>
+</div>
+
+
+
+
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
+
+
 
