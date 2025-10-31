@@ -733,6 +733,140 @@ body {
 
 
 
+:root{
+  --bg:#0f1724;
+  --panel:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#06b6d4;
+  --accent-2:#7c3aed;
+  --text:#e6eef6;
+  --radius:12px;
+  --gap:24px;
+  --max-width:1100px;
+  --shadow:0 8px 30px rgba(2,6,23,0.6);
+  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+}
+
+footer.site-footer{
+  background: linear-gradient(178deg, rgba(8, 0, 0, 1) 14%, rgba(3, 163, 97, 1) 93%);
+  padding:32px 16px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  color: #fff;
+}
+.footer-inner{
+  max-width:var(--max-width);
+  margin:auto;
+  display:grid;
+  gap:var(--gap);
+}
+
+.footer-top{
+  display:grid;
+  gap:var(--gap);
+  grid-template-columns:1fr;
+}
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contact hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+hr {
+  border: none;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  margin: 10px 0;
+}
+
+.tblock {
+  color: #fff;
+}
+.contact p{
+  margin:6px 0;
+  color:var(--muted)
+}
+
+.contact a{
+  color:var(--text);
+  text-decoration:none
+}
+
+.footer-grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(2,1fr);
+}
+
+.col{
+  background:rgba(255, 255, 255, 0.192);
+  padding:16px;
+  border-radius:10px;
+}
+.col h3{
+  margin:0 0 10px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.link-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.link-list a{
+  color:var(--text);
+  text-decoration:none;
+}
+.link-list a:hover{color:var(--accent)}
+
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.05);
+  margin-top:20px;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.socials{display:flex;gap:10px}
+.socials a{
+  display:inline-flex;
+  width:36px;height:36px;
+  border-radius:8px;
+  align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.05);
+  color:white;
+}
+
+.collapse-btn{display:none;background:none;border:none;color:var(--muted);cursor:pointer}
+.collapsible-content{max-height:100%;overflow:hidden}
+
+@media(max-width:720px){
+  .footer-grid{grid-template-columns:1fr;}
+  .collapse-btn{display:inline}
+  .collapsible-content{max-height:0;transition:max-height .3s ease}
+  .collapsible-content.open{max-height:300px}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -955,3 +1089,4 @@ body {
   }
   .wtext p { font-size: 0.92rem; }
 }
+
