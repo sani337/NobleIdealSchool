@@ -72,6 +72,11 @@ body {
     width: 70%
 }
 
+.r-part a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .sc-name {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight:700;
@@ -1089,4 +1094,5 @@ hr {
   }
   .wtext p { font-size: 0.92rem; }
 }
+
 
